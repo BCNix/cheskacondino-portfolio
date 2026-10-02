@@ -1,0 +1,43 @@
+---
+import "../styles/tokens.css";
+
+interface Props {
+  title?: string;
+}
+
+const { title = "Cheska Condino" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="Influencer & UGC creator for lifestyle, travel and fashion, based in Victoria, BC."
+    />
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <slot />
+  </body>
+</html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 20;
+    padding: 0.65rem 1rem;
+    transform: translateY(-150%);
+    background: var(--text);
+    color: var(--surface);
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+</style>

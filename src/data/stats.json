@@ -1,0 +1,30 @@
+{
+  "asOf": "September 2026",
+  "source": "TikTok and Instagram",
+  "reach": [
+    { "value": 1.8, "unit": "M", "label": "views on a single TikTok" },
+    { "value": 187.5, "unit": "K", "label": "likes on TikTok" },
+    { "value": 8.2, "unit": "K", "label": "TikTok followers" },
+    { "value": null, "unit": "", "label": "brands worked with", "placeholder": "[#]" }
+  ],
+  "tiktok": { "followers": 8253, "likes": "187.5K", "topVideoViews": "1.8M", "avgViews": null, "engagementRate": null },
+  "instagram": { "followers": 554, "posts": 79, "avgViews": null, "engagementRate": null },
+  "audience": {
+    "isSample": true,
+    "note": "Sample figures for layout only. Replace with Cheska's TikTok insights.",
+    "age": [
+      { "label": "18 to 24", "pct": 38.4 },
+      { "label": "25 to 34", "pct": 41.2 },
+      { "label": "35 to 44", "pct": 13.6 },
+      { "label": "45+", "pct": 6.8 }
+    ],
+    "gender": { "women": 78.3, "men": 21.7 },
+    "countries": [
+      { "label": "Canada", "pct": 46.1 },
+      { "label": "Philippines", "pct": 18.7 },
+      { "label": "United States", "pct": 14.2 },
+      { "label": "Other", "pct": 21.0 }
+    ],
+    "topCities": ["Victoria", "Vancouver", "Toronto"]
+  }
+}

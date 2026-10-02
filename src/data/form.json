@@ -1,0 +1,14 @@
+{
+  "needs": [
+    { "value": "influencer", "label": "Influencer collab" },
+    { "value": "ugc", "label": "UGC content" },
+    { "value": "both", "label": "Both" }
+  ],
+  "budgets": ["Under $500", "$500 to $1,500", "$1,500 to $5,000", "Over $5,000", "Not sure yet"],
+  "mediaKitLabel": "Please send me your media kit and rates",
+  "messages": {
+    "sending": "Sending…",
+    "sent": "Thank you. Your inquiry has been sent, and I'll reply within 2 business days.",
+    "emailInvalid": "Add the part after the @, like hello@brand.com."
+  }
+}

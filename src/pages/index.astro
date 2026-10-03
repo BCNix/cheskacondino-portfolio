@@ -2,18 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Home | Cheska Condino">
-  <main id="content" class="home-shell">
-    <section class="home-shell__canvas" aria-label="Homepage"></section>
-  </main>
+<BaseLayout>
+  <section class="home-shell__canvas" aria-label="Homepage"></section>
 </BaseLayout>
 
 <style>
-  .home-shell {
-    min-height: 100svh;
-    padding: clamp(1.5rem, 5vw, 4rem);
-  }
-
   .home-shell__canvas {
     min-height: calc(100svh - 3rem);
     border: 1px solid var(--line);

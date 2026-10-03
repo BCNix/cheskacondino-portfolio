@@ -3,9 +3,13 @@ import "../styles/tokens.css";
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = "Cheska Condino" } = Astro.props;
+const {
+  title = "Cheska Condino | Lifestyle & travel creator in Victoria, BC",
+  description = "Influencer & UGC creator for lifestyle, travel and fashion, based in Victoria, BC.",
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -13,10 +17,7 @@ const { title = "Cheska Condino" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <meta
-      name="description"
-      content="Influencer & UGC creator for lifestyle, travel and fashion, based in Victoria, BC."
-    />
+    <meta name="description" content={description} />
 
     <link rel="icon" href="/logo/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/logo/icon.svg" type="image/svg+xml" />
@@ -24,20 +25,28 @@ const { title = "Cheska Condino" } = Astro.props;
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
-    <slot />
+    <main id="content">
+      <slot />
+    </main>
   </body>
 </html>
 
 <style>
   .skip-link {
+    background-color: var(--accent);
+    color: var(--on-accent);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 1.25rem;
+    border-radius: 999px;
+    font-weight: 500;
+    text-decoration: none;
     position: absolute;
     top: 1rem;
     left: 1rem;
     z-index: 70;
-    padding: 0.65rem 1rem;
     transform: translateY(-150%);
-    background: var(--text);
-    color: var(--surface);
   }
 
   .skip-link:focus {

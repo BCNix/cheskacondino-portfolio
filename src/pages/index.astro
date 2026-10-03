@@ -12,18 +12,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .home-shell {
     min-height: 100svh;
     padding: clamp(1.5rem, 5vw, 4rem);
-    background: var(--surface);
-  }
-
-  .home-shell::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 10;
-    pointer-events: none;
-    background: url("/assets/grain.png") repeat;
-    opacity: 0.3;
-    mix-blend-mode: soft-light;
   }
 
   .home-shell__canvas {

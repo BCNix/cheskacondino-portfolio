@@ -1,8 +1,8 @@
 @import "@fontsource/jost/400.css";
 @import "@fontsource/jost/500.css";
 @import "@fontsource/bodoni-moda/400.css";
+@import "@fontsource/bodoni-moda/400-italic.css";
 @import "@fontsource/bodoni-moda/500.css";
-@import "@fontsource/bodoni-moda/600.css";
 @import "@fontsource/pinyon-script/400.css";
 
 :root {
@@ -11,6 +11,7 @@
   --surface-cool: #d6e3ec;
   --ribbon: #e7a9b8;
   --accent: #8c3a52;
+  --on-accent: #fcf6f7;
   --text: #3a2a2e;
   --muted: #6b5a5f;
   --chart-1: #8c3a52;
@@ -19,23 +20,6 @@
   --shadow: 0 14px 44px rgb(140 58 82 / 0.07);
   color-scheme: light;
   font-family: "Jost", sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --surface: #231a1e;
-    --surface-2: #33262b;
-    --surface-cool: #2a3138;
-    --ribbon: #e7a9b8;
-    --accent: #e7a9b8;
-    --text: #f6e9ec;
-    --muted: #c9b4ba;
-    --line: rgb(246 233 236 / 0.16);
-    --chart-1: #d56c8b;
-    --chart-2: #9c4462;
-    --shadow: none;
-    color-scheme: dark;
-  }
 }
 
 * {
@@ -53,6 +37,41 @@ body {
   color: var(--text);
   font-family: "Jost", sans-serif;
   line-height: 1.6;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  background: url("/assets/grain.png") repeat;
+  background-size: 160px 160px;
+  opacity: 0.2;
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #231a1e;
+    --surface-2: #33262b;
+    --surface-cool: #2a3138;
+    --ribbon: #e7a9b8;
+    --accent: #e7a9b8;
+    --on-accent: #231a1e;
+    --text: #f6e9ec;
+    --muted: #c9b4ba;
+    --line: rgb(246 233 236 / 0.16);
+    --chart-1: #d56c8b;
+    --chart-2: #9c4462;
+    --shadow: none;
+    color-scheme: dark;
+  }
+
+  body::after {
+    opacity: 0.1;
+    mix-blend-mode: screen;
+  }
 }
 
 a {

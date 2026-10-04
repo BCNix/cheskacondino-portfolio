@@ -2,17 +2,40 @@
   "influencer": {
     "name": "Influencer collabs",
     "description": "Content featuring your brand, shared with my audience on TikTok and Instagram.",
-    "items": ["Dedicated Reel or TikTok", "Stories set", "Product seeding", "Event appearances", "Link in bio placement", "Multi-platform bundles"]
+    "items": [
+      "Dedicated Reel or TikTok",
+      "Stories set",
+      "Product seeding",
+      "Event appearances",
+      "Link in bio placement",
+      "Multi-platform bundles"
+    ]
   },
   "ugc": {
     "name": "UGC content",
     "description": "Videos and photos created for your brand's channels and paid ads.",
-    "items": ["UGC videos", "Photography", "Raw footage", "Extra hooks and variations", "Ad testing bundles", "Monthly retainers"]
+    "items": [
+      "UGC videos",
+      "Photography",
+      "Raw footage",
+      "Extra hooks and variations",
+      "Ad testing bundles",
+      "Monthly retainers"
+    ]
   },
   "process": [
-    { "step": "Brief", "text": "You share the product, your goals and where the content will run." },
-    { "step": "Create", "text": "I plan, film and edit, with your approval before anything is published." },
-    { "step": "Deliver", "text": "Final files or live posts are delivered within [turnaround time]." }
+    {
+      "step": "Brief",
+      "text": "You share the product, your goals and where the content will run."
+    },
+    {
+      "step": "Create",
+      "text": "I plan, film and edit, with your approval before anything is published."
+    },
+    {
+      "step": "Deliver",
+      "text": "Final files or live posts are delivered within [turnaround time]."
+    }
   ],
   "note": "Every package is tailored to your campaign. Rates are in my media kit, sent on request."
 }

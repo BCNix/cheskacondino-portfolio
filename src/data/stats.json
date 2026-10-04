@@ -5,10 +5,26 @@
     { "value": 1.8, "unit": "M", "label": "views on a single TikTok" },
     { "value": 187.5, "unit": "K", "label": "likes on TikTok" },
     { "value": 8.2, "unit": "K", "label": "TikTok followers" },
-    { "value": null, "unit": "", "label": "brands worked with", "placeholder": "[#]" }
+    {
+      "value": null,
+      "unit": "",
+      "label": "brands worked with",
+      "placeholder": "[#]"
+    }
   ],
-  "tiktok": { "followers": 8253, "likes": "187.5K", "topVideoViews": "1.8M", "avgViews": null, "engagementRate": null },
-  "instagram": { "followers": 554, "posts": 79, "avgViews": null, "engagementRate": null },
+  "tiktok": {
+    "followers": 8253,
+    "likes": "187.5K",
+    "topVideoViews": "1.8M",
+    "avgViews": null,
+    "engagementRate": null
+  },
+  "instagram": {
+    "followers": 554,
+    "posts": 79,
+    "avgViews": null,
+    "engagementRate": null
+  },
   "audience": {
     "isSample": true,
     "note": "Sample figures for layout only. Replace with Cheska's TikTok insights.",

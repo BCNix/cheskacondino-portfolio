@@ -1,6 +1,46 @@
 [
-  { "brand": "Original content", "type": "influencer", "industry": "Travel", "format": "TikTok", "result": "1.8M views on TikTok", "video": "", "poster": "", "platformUrl": "https://www.tiktok.com/@cheskaincanada" },
-  { "brand": "[Brand]", "type": "ugc", "industry": "Lifestyle", "format": "UGC video", "result": "Delivered as ad creative", "video": "", "poster": "", "platformUrl": "" },
-  { "brand": "[Brand]", "type": "influencer", "industry": "Tech & gear", "format": "TikTok", "result": "[Views] views on TikTok", "video": "", "poster": "", "platformUrl": "" },
-  { "brand": "[Brand]", "type": "ugc", "industry": "Fashion", "format": "UGC video", "result": "[CTR] CTR as a paid ad", "video": "", "poster": "", "platformUrl": "" }
+  {
+    "id": "original-travel-tiktok",
+    "brand": "Original content",
+    "type": "influencer",
+    "industry": "Travel",
+    "format": "TikTok",
+    "result": "1.8M views on TikTok",
+    "video": "",
+    "poster": "",
+    "platformUrl": "https://www.tiktok.com/@cheskaincanada"
+  },
+  {
+    "id": "ugc-lifestyle-1",
+    "brand": "[Brand]",
+    "type": "ugc",
+    "industry": "Lifestyle",
+    "format": "UGC video",
+    "result": "Delivered as ad creative",
+    "video": "",
+    "poster": "",
+    "platformUrl": ""
+  },
+  {
+    "id": "influencer-tech-1",
+    "brand": "[Brand]",
+    "type": "influencer",
+    "industry": "Tech & gear",
+    "format": "TikTok",
+    "result": "[Views] views on TikTok",
+    "video": "",
+    "poster": "",
+    "platformUrl": ""
+  },
+  {
+    "id": "ugc-fashion-1",
+    "brand": "[Brand]",
+    "type": "ugc",
+    "industry": "Fashion",
+    "format": "UGC video",
+    "result": "[CTR] CTR as a paid ad",
+    "video": "",
+    "poster": "",
+    "platformUrl": ""
+  }
 ]

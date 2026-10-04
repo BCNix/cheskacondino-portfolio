@@ -4,7 +4,13 @@
     { "value": "ugc", "label": "UGC content" },
     { "value": "both", "label": "Both" }
   ],
-  "budgets": ["Under $500", "$500 to $1,500", "$1,500 to $5,000", "Over $5,000", "Not sure yet"],
+  "budgets": [
+    "Under $500",
+    "$500 to $1,500",
+    "$1,500 to $5,000",
+    "Over $5,000",
+    "Not sure yet"
+  ],
   "mediaKitLabel": "Please send me your media kit and rates",
   "messages": {
     "sending": "Sending…",

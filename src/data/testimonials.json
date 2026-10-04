@@ -1,4 +1,18 @@
 [
-  { "text": "[What a brand said about an influencer collab, shared with their permission. Three lines at most.]", "name": "[First name]", "role": "[Role] at [Brand]", "offer": "Influencer collab", "permission": false },
-  { "text": "[What a brand said about her UGC content, ideally with a result like CTR or sales. Three lines at most.]", "name": "[First name]", "role": "[Role] at [Brand]", "offer": "UGC content", "permission": false }
+  {
+    "id": "influencer-1",
+    "text": "[What a brand said about an influencer collab, shared with their permission. Three lines at most.]",
+    "name": "[First name]",
+    "role": "[Role] at [Brand]",
+    "offer": "Influencer collab",
+    "permission": false
+  },
+  {
+    "id": "ugc-1",
+    "text": "[What a brand said about her UGC content, ideally with a result like CTR or sales. Three lines at most.]",
+    "name": "[First name]",
+    "role": "[Role] at [Brand]",
+    "offer": "UGC content",
+    "permission": false
+  }
 ]

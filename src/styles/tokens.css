@@ -97,8 +97,20 @@ blockquote {
   text-wrap: pretty;
 }
 
+.container {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 32px;
   }
 }

@@ -1,0 +1,83 @@
+.btn-p {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 0 8px 0 26px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn-p:hover {
+  background: var(--text);
+  color: var(--surface);
+}
+
+.btn-p:active {
+  transform: scale(0.98);
+}
+
+.btn-ico {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--on-accent) 18%, transparent);
+  transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.btn-p:hover .btn-ico {
+  transform: translate(2px, -2px) scale(1.06);
+}
+
+.btn-s {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn-s:hover {
+  background: var(--surface-2);
+}
+
+.btn-s:active {
+  transform: scale(0.98);
+}
+
+.btn-sm {
+  min-height: 44px;
+  padding: 0 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-p,
+  .btn-s,
+  .btn-ico {
+    transition: none;
+  }
+}

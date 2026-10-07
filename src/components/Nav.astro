@@ -1,0 +1,84 @@
+<header class="nav">
+  <div class="island">
+    <a href="#top" aria-label="Cheska Condino, back to top" class="logo">
+      <picture>
+        <source
+          srcset="/logo/cheska-condino-logo-horizontal-porcelain.svg"
+          media="(prefers-color-scheme:dark)"
+        />
+        <img
+          src="/logo/cheska-condino-logo-horizontal-cocoa.svg"
+          alt=""
+          width="166"
+          height="34"
+        />
+      </picture>
+    </a>
+    <nav aria-label="Main">
+      <a class="nl" href="#about">About</a>
+      <a class="nl" href="#work">Work</a>
+      <a class="nl" href="#services">Services</a>
+      <a class="btn-p btn-sm" href="#contact">Work with me</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 16px;
+    z-index: 30;
+    padding: 16px 16px 0;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .logo {
+    line-height: 0;
+  }
+
+  .nl {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nl:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
+
+  .island {
+    max-width: 1216px;
+    height: 64px;
+    margin: 0 auto;
+    padding: 0 10px 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: color-mix(in srgb, var(--surface) 80%, transparent);
+    backdrop-filter: blur(18px) saturate(140%);
+    box-shadow:
+      var(--shadow),
+      inset 0 1px 0 rgb(255 255 255 / 0.6);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .island {
+      box-shadow:
+        var(--shadow),
+        inset 0 1px 0 rgb(255 255 255 / 0.07);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .nav {
+      padding: 16px 32px 0;
+    }
+  }
+</style>

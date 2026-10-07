@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
 ---
 
 <BaseLayout>
+  <Nav slot="header" />
   <section class="home-shell__canvas" aria-label="Homepage">
     <a class="btn-p" href="#">Work with me <span class="btn-ico">→</span></a>
     <a class="btn-s" href="#">Request media kit</a>

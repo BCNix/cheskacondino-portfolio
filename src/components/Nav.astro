@@ -18,7 +18,7 @@
       <a class="nl" href="#about">About</a>
       <a class="nl" href="#work">Work</a>
       <a class="nl" href="#services">Services</a>
-      <a class="btn-p btn-sm" href="#contact">Work with me</a>
+      <a class="btn-p btn-sm nav-cta" href="#contact">Work with me</a>
     </nav>
   </div>
 </header>
@@ -26,22 +26,28 @@
 <style>
   .nav {
     position: sticky;
-    top: 16px;
+    top: 0;
     z-index: 30;
-    padding: 16px 16px 0;
+    padding: 10px 10px 0;
   }
 
   nav {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 4px;
   }
 
   .logo {
     line-height: 0;
   }
 
+  .logo img {
+    height: 28px;
+    width: auto;
+  }
+
   .nl {
+    display: none;
     color: var(--text);
     text-decoration: none;
   }
@@ -53,9 +59,9 @@
 
   .island {
     max-width: 1216px;
-    height: 64px;
+    height: 60px;
     margin: 0 auto;
-    padding: 0 10px 0 28px;
+    padding: 0 6px 0 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,6 +74,11 @@
       inset 0 1px 0 rgb(255 255 255 / 0.6);
   }
 
+  .nav-cta {
+    padding: 0 18px;
+    font-size: 15px;
+  }
+
   @media (prefers-color-scheme: dark) {
     .island {
       box-shadow:
@@ -78,7 +89,30 @@
 
   @media (min-width: 768px) {
     .nav {
+      top: 16px;
       padding: 16px 32px 0;
+    }
+
+    .island {
+      height: 64px;
+      padding: 0 10px 0 28px;
+    }
+
+    nav {
+      gap: 40px;
+    }
+
+    .nl {
+      display: inline;
+    }
+
+    .logo img {
+      height: 34px;
+    }
+
+    .nav-cta {
+      padding: 0 22px;
+      font-size: inherit;
     }
   }
 </style>

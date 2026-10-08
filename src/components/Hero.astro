@@ -1,0 +1,203 @@
+---
+import type { SocialLink } from "../types";
+
+interface Props {
+  tiktok: SocialLink;
+  instagram: SocialLink;
+}
+
+const { tiktok, instagram } = Astro.props;
+---
+
+<section id="top" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h1>Cheska<br /> Condino</h1>
+      <p class="hero-sub">
+        Influencer & UGC creator for lifestyle, travel and fashion, based in
+        Victoria, BC.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn-p" href="#contact">
+          Work with me
+          <span class="btn-ico"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 256 256"
+              aria-hidden="true"
+              ><path
+                d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"
+              ></path></svg
+            ></span
+          >
+        </a>
+        <a class="btn-s" href="?kit=1#contact"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+            aria-hidden="true"
+            ><path
+              d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"
+            ></path></svg
+          > Request media kit</a
+        >
+      </div>
+      <div class="hero-socials">
+        <a
+          class="ib"
+          href={tiktok.url}
+          target="_blank"
+          rel="noopener"
+          aria-label="Cheska on TikTok (opens in new tab)"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+            aria-hidden="true"
+            ><path
+              d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z"
+            ></path></svg
+          ></a
+        >
+        <a
+          class="ib"
+          href={instagram.url}
+          target="_blank"
+          rel="noopener"
+          aria-label="Cheska on Instagram (opens in new tab)"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+            aria-hidden="true"
+            ><path
+              d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
+            ></path></svg
+          ></a
+        >
+        <span class="hero-handle">{tiktok.handle}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    isolation: isolate;
+    padding-block: 40px 56px;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  h1 {
+    margin: 0;
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: clamp(3rem, 6vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+  }
+
+  .hero-sub {
+    margin: 0;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  .hero-ctas a {
+    justify-content: center;
+  }
+
+  /* Socials */
+  .hero-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ib {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      background-color 0.2s ease,
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .ib:hover {
+    background: var(--surface-2);
+  }
+
+  .ib:active {
+    transform: scale(0.98);
+  }
+
+  .hero-handle {
+    font-size: 0.9375rem;
+    color: var(--muted);
+    margin-left: 4px;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      padding-block: 64px 104px;
+    }
+
+    .hero-ctas {
+      flex-direction: row;
+      margin-top: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      column-gap: 32px;
+      align-items: center;
+    }
+
+    .hero-sub {
+      font-size: 1.3125rem;
+      max-width: 30ch;
+    }
+
+    .hero-copy {
+      grid-column: 1 / span 6;
+      padding-right: 24px;
+      gap: 32px;
+    }
+
+    .hero-socials {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      max-width: 420px;
+    }
+  }
+</style>

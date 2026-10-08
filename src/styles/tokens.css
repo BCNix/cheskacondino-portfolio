@@ -48,6 +48,10 @@ body::after {
   mix-blend-mode: multiply;
 }
 
+section[id] {
+  scroll-margin-top: 104px;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --surface: #231a1e;

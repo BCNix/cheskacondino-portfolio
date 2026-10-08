@@ -1,21 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import { getEntry } from "astro:content";
+
+const socials = await getEntry("socials", "socials");
+
+if (!socials) {
+  throw new Error("socials.json failed to load");
+}
 ---
 
 <BaseLayout>
   <Nav slot="header" />
-  <section class="home-shell__canvas" aria-label="Homepage">
-    <a class="btn-p" href="#">Work with me <span class="btn-ico">→</span></a>
-    <a class="btn-s" href="#">Request media kit</a>
-    <a class="btn-p btn-sm" href="#">Work with me</a>
-  </section>
+  <Hero tiktok={socials.data.tiktok} instagram={socials.data.instagram} />
 </BaseLayout>
-
-<style>
-  .home-shell__canvas {
-    min-height: calc(100svh - 3rem);
-    border: 1px solid var(--line);
-    background: var(--surface-2);
-  }
-</style>

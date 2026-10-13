@@ -2,16 +2,27 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
+import Stats from "../components/Stats.astro";
 import { getEntry } from "astro:content";
 
 const socials = await getEntry("socials", "socials");
+const stats = await getEntry("stats", "stats");
 
 if (!socials) {
   throw new Error("socials.json failed to load");
+}
+
+if (!stats) {
+  throw new Error("stats.json failed to load");
 }
 ---
 
 <BaseLayout>
   <Nav slot="header" />
   <Hero tiktok={socials.data.tiktok} instagram={socials.data.instagram} />
+  <Stats
+    reach={stats.data.reach}
+    asOf={stats.data.asOf}
+    source={stats.data.source}
+  />
 </BaseLayout>

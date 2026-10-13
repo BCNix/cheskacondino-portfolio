@@ -100,7 +100,7 @@ const services = defineCollection({
 
 export const reachStat = z.object({
   value: z.number().nullable(),
-  unit: z.enum(["M", "K", ""]),
+  unit: z.enum(["M", "K", "+"]),
   label: z.string().min(1),
   placeholder: z.string().optional(),
 });

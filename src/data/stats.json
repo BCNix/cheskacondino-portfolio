@@ -6,10 +6,9 @@
     { "value": 187.5, "unit": "K", "label": "likes on TikTok" },
     { "value": 8.2, "unit": "K", "label": "TikTok followers" },
     {
-      "value": null,
-      "unit": "",
-      "label": "brands worked with",
-      "placeholder": "[#]"
+      "value": 55,
+      "unit": "+",
+      "label": "brands worked with"
     }
   ],
   "tiktok": {

@@ -13,8 +13,8 @@ const { tiktok, instagram } = Astro.props;
 ---
 
 <section id="top" class="hero">
-  <div class="hero-glow" aria-hidden="true"></div>
   <div class="container hero-grid">
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-copy">
       <h1>Cheska<br /> Condino</h1>
       <p class="hero-sub">
@@ -125,6 +125,10 @@ const { tiktok, instagram } = Astro.props;
     isolation: isolate;
     padding-block: 40px 56px;
     overflow-x: clip;
+  }
+
+  .hero-grid {
+    position: relative;
   }
 
   /* Copy */

@@ -1,5 +1,8 @@
 ---
 import type { SocialLink } from "../types";
+import { Image, Picture } from "astro:assets";
+import bow from "../assets/bow.png";
+import cutout from "../assets/photos/cheska-hero-cutout-1600.webp";
 
 interface Props {
   tiktok: SocialLink;
@@ -10,6 +13,7 @@ const { tiktok, instagram } = Astro.props;
 ---
 
 <section id="top" class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="hero-copy">
       <h1>Cheska<br /> Condino</h1>
@@ -88,16 +92,42 @@ const { tiktok, instagram } = Astro.props;
         <span class="hero-handle">{tiktok.handle}</span>
       </div>
     </div>
+    <div class="hero-media">
+      <div class="hero-back" aria-hidden="true"></div>
+      <div class="hero-panel" aria-hidden="true"></div>
+      <div class="hero-clip">
+        <Picture
+          src={cutout}
+          alt="Cheska Condino seated with a laptop, looking at the camera"
+          class="hero-photo"
+          formats={["avif"]}
+          fallbackFormat="webp"
+          widths={[400, 800, 1200]}
+          sizes="(min-width: 768px) 480px, calc(100vw - 46px)"
+          priority
+        />
+      </div>
+      <Image
+        src={bow}
+        alt=""
+        class="hero-bow"
+        aria-hidden="true"
+        loading="eager"
+      />
+    </div>
   </div>
 </section>
 
 <style>
+  /* Section */
   .hero {
     position: relative;
     isolation: isolate;
     padding-block: 40px 56px;
+    overflow-x: clip;
   }
 
+  /* Copy */
   .hero-copy {
     display: flex;
     flex-direction: column;
@@ -125,13 +155,13 @@ const { tiktok, instagram } = Astro.props;
     flex-direction: column;
     gap: 12px;
     margin-top: 6px;
+    max-width: 420px;
   }
 
   .hero-ctas a {
     justify-content: center;
   }
 
-  /* Socials */
   .hero-socials {
     display: flex;
     align-items: center;
@@ -166,14 +196,97 @@ const { tiktok, instagram } = Astro.props;
     margin-left: 4px;
   }
 
-  @media (min-width: 768px) {
-    .hero {
-      padding-block: 64px 104px;
+  /* Media */
+
+  .hero-glow {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.55;
+    right: -140px;
+    bottom: 20px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(
+      closest-side,
+      color-mix(in srgb, var(--ribbon) 40%, transparent),
+      transparent
+    );
+  }
+
+  .hero-media {
+    position: relative;
+    margin: 30px auto 0;
+    width: calc(100% - 28px);
+    max-width: 480px;
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-back {
+    position: absolute;
+    inset: 94px 14px -14px -14px;
+    border-radius: 20px;
+    border: 1px solid var(--ribbon);
+    opacity: 0.7;
+  }
+
+  .hero-panel {
+    position: absolute;
+    inset: 80px 0 0;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    background: linear-gradient(
+      180deg,
+      var(--surface-2),
+      color-mix(in srgb, var(--ribbon) 46%, var(--surface-2))
+    );
+  }
+
+  .hero-clip {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 round 0 0 20px 20px);
+  }
+
+  .hero-photo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-bow {
+    position: absolute;
+    top: 55px;
+    right: 4px;
+    width: 64px;
+    height: auto;
+    transform: rotate(12deg);
+    pointer-events: none;
+  }
+
+  @media (min-width: 600px) and (max-width: 767px) {
+    .hero-copy {
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-sub {
+      max-width: 30ch;
     }
 
     .hero-ctas {
-      flex-direction: row;
-      margin-top: 0;
+      width: 100%;
+      max-width: 420px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    /* Section + grid */
+    .hero {
+      padding-block: 64px 104px;
     }
 
     .hero-grid {
@@ -181,6 +294,14 @@ const { tiktok, instagram } = Astro.props;
       grid-template-columns: repeat(12, minmax(0, 1fr));
       column-gap: 32px;
       align-items: center;
+    }
+
+    /* Copy */
+
+    .hero-ctas {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 0;
     }
 
     .hero-sub {
@@ -198,6 +319,61 @@ const { tiktok, instagram } = Astro.props;
       padding-top: 28px;
       border-top: 1px solid var(--line);
       max-width: 420px;
+    }
+
+    /* Media */
+
+    .hero-glow {
+      right: -6%;
+      top: -18%;
+      bottom: auto;
+      width: 920px;
+      height: 920px;
+    }
+
+    .hero-media {
+      grid-column: 7 / span 6;
+      justify-self: end;
+      width: 100%;
+      margin: 0;
+    }
+
+    .hero-back {
+      inset: 138px 28px -28px -28px;
+    }
+
+    .hero-panel {
+      inset: 110px 0 0;
+    }
+
+    .hero-bow {
+      top: 76px;
+      right: -12px;
+      width: 96px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-bow {
+      right: -28px;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .hero-glow {
+      opacity: 0.2;
+    }
+
+    .hero-panel {
+      background: linear-gradient(
+        180deg,
+        var(--surface-2),
+        color-mix(in srgb, var(--ribbon) 22%, var(--surface-2))
+      );
+    }
+
+    .hero-photo {
+      filter: drop-shadow(0 0 22px rgb(231 169 184 / 0.22));
     }
   }
 </style>

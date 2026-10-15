@@ -146,3 +146,52 @@ const { reach, asOf, source } = Astro.props;
     }
   }
 </style>
+
+<script>
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (!reduceMotion) {
+    const counters = document.querySelectorAll<HTMLElement>("[data-count]");
+    const DURATION = 2200; // in milliseconds
+    const ease = (t: number) => 1 - (1 - t) ** 3;
+
+    function countUp(el: HTMLElement) {
+      const target = Number(el.dataset.count);
+      const decimals = Number(el.dataset.decimals);
+      let start: number | undefined;
+
+      function tick(now: number) {
+        start ??= now;
+        const t = Math.min((now - start) / DURATION, 1);
+        el.textContent = (target * ease(t)).toFixed(decimals);
+        if (t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    counters.forEach((el) => {
+      const raw = el.dataset.count;
+      if (raw === undefined) return;
+      const decimals = raw.split(".")[1]?.length ?? 0;
+      el.dataset.decimals = String(decimals);
+      el.textContent = (0).toFixed(decimals);
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          if (entry.target instanceof HTMLElement) countUp(entry.target);
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.5,
+      },
+    );
+
+    counters.forEach((el) => observer.observe(el));
+  }
+</script>
